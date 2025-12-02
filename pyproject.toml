@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "few_shot_utils"
-version = "0.0.1.dev0"
-description = "Few-shot learning tutorial on satellite imagery for rooftop detection in Geneva, Switzerland"
+version = "0.0.1"
+description = "DL Tutorial 2025: Few-shot learning tutorial on satellite imagery for rooftop detection."
 readme = "README.md"
 authors = [
     {name = "Tutorial Group 1"},
@@ -45,8 +45,8 @@ torch = [
 
 [project.urls]
 Documentation = "https://elenaivadreyer.github.io/tutorial-group-1/"
-Source = "https://github.com/elenaivadreyer/tutorial-group-1"
-Tracker = "https://github.com/elenaivadreyer/tutorial-group-1/issues"
+Source = "https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1"
+Tracker = "https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1/issues"
 
 #Global ruff configuration
 [tool.ruff]

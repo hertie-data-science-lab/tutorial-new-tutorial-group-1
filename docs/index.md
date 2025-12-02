@@ -23,7 +23,7 @@ This tutorial demonstrates:
 ### Installation
 
 ```bash
-git clone https://github.com/elenaivadreyer/tutorial-group-1.git
+git clone https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1.git
 cd tutorial-group-1
 pip install -e .
 ```
@@ -46,8 +46,8 @@ The dataset contains high-resolution satellite imagery of Geneva, Switzerland, w
 
 ## Resources
 
-- [GitHub Repository](https://github.com/elenaivadreyer/tutorial-group-1)
-- [Tutorial Notebook](https://github.com/elenaivadreyer/tutorial-group-1/blob/main/notebooks/tutorial_few_shot_learning.ipynb)
+- [GitHub Repository](https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1)
+- [Tutorial Notebook](https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1/blob/main/notebooks/tutorial_few_shot_learning.ipynb)
 
 ## License
 

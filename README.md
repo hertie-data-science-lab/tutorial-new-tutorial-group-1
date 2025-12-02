@@ -1,4 +1,10 @@
 # Few-Shot Learning for Rooftop Detection in Satellite Imagery
+### GRAD-E1394 Deep Learning
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/hertie-data-science-lab/tutorial-new-tutorial-group-1/blob/elena-setup/notebooks/tutorial_few_shot_learning.ipynb)
+
+
+**Author(s):** Elena Dreyer, Giorgio Coppola, Nadine Daum, Nicolas Reichardt
 
 ## Tutorial Overview
 
@@ -24,7 +30,7 @@ This tutorial demonstrates few-shot learning techniques for semantic segmentatio
 
 ```bash
 # Clone the repository
-git clone https://github.com/elenaivadreyer/tutorial-group-1.git
+git clone https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1.git
 cd tutorial-group-1
 
 # Create virtual environment
