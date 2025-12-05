@@ -1,0 +1,9 @@
+title: Few-Shot Learning Tutorial
+description: Few-shot learning for rooftop detection in satellite imagery
+theme: jekyll-theme-primer
+baseurl: "/tutorial-group-1"
+url: "https://elenaivadreyer.github.io"
+
+# remote_theme: pages-themes/primer@v0.6.0
+# plugins:
+# - jekyll-remote-theme # add this line to the plugins list if you already have one

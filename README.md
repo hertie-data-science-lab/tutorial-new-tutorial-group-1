@@ -1,37 +1,104 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/15CTOpCR)
-# Deep Learning E1394 - Tutorial
+# Few-Shot Learning for Rooftop Detection in Satellite Imagery
+### GRAD-E1394 Deep Learning
 
-## Submitting your work
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/hertie-data-science-lab/tutorial-new-tutorial-group-1/blob/elena-setup/notebooks/tutorial_few_shot_learning.ipynb)
 
-Once the deadline has passed, you are not able to push to your repository anymore or update it in any other way and all changes on the main branch will be considered for grading. In other words, there is no "submit" button which you need to press. You just need to ensure that all your work has been pushed / uploaded to GitHub before the deadline.
 
-Uploading a new or edited file to GitHub involves three steps:
-1. Add the file to the staging area:
-    ```
-    git add <file to be added>
-    ```
-2. Create a commit:
-    ```
-    git commit -m <commit msg - briefly describe your change>
-    ```
-3. Push the local commit to GitHub:
-    ```
-    git push
-    ```
+**Author(s):** Elena Dreyer, Giorgio Coppola, Nadine Daum, Nicolas Reichardt
 
-To avoid conflicts when multiple people are working on the same file, we recommend to push your changes as frequently as possible and always pull the latest changes from GitHub before you start working. Also, as a nice teammate, test your changes before you push them and use meaninful commit messages to make it easy to understand your changes.
+## Tutorial Overview
 
-## Asking for help
+This tutorial demonstrates few-shot learning techniques for semantic segmentation of satellite imagery. The dataset contains high-resolution satellite images of Geneva, Switzerland, with corresponding segmentation labels for rooftop detection.
 
-If you have important questions or believe to have spotted an error, please open an issue on your repository and mention the teaching assistant with @chiara-fb and @henrycgbaker.
+📓 **[View Tutorial Notebook (HTML)](docs/tutorial_few_shot_learning.html)**
 
-## Useful Links
-* Git best practices: https://gist.github.com/luismts/495d982e8c5b1a0ced4a57cf3d93cf60
-* How to write a good git commit message: https://cbea.ms/git-commit/
-* Book "Dive into Deep Learning": https://d2l.ai/
-* Tutorial on pushing and submitting work with GitHub classroom: https://www.youtube.com/watch?v=jXpT8eOzzCM
-* Neural network from scratch:
-    * https://towardsdatascience.com/math-neural-network-from-scratch-in-python-d6da9f29ce65
-    * https://pythonalgos.com/create-a-neural-network-from-scratch-in-python-3/
-    * https://github.com/casperbh96/Neural-Network-From-Scratch/blob/master/NN_From_Scratch.ipynb
-    * https://www.codingame.com/playgrounds/59631/neural-network-xor-example-from-scratch-no-libs
+### Learning Outcomes
+- Understanding few-shot learning concepts for image segmentation
+- Working with satellite imagery and segmentation masks
+- Implementing and evaluating few-shot learning models for rooftop detection
+
+## Video Tutorial
+
+<!-- VIDEO PLACEHOLDER: Replace the link below with your tutorial video -->
+[![Tutorial Video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+
+*Click the image above to watch the tutorial video*
+
+## Quick Start
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1.git
+cd tutorial-group-1
+
+# Create virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install the package (without PyTorch)
+pip install -e .
+
+# Install PyTorch (CPU-only version recommended to save disk space)
+# CPU-only: ~730MB vs CUDA version: ~7GB
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+
+# Or use the Makefile
+make install
+make install-torch
+```
+
+**Note:** PyTorch is not installed by default due to its large size. The CPU-only version is recommended for most use cases and saves significant disk space.
+
+### Running the Tutorial
+
+Open the main tutorial notebook:
+```bash
+jupyter notebook notebooks/tutorial_few_shot_learning.ipynb
+```
+
+## Project Structure
+
+```
+├── notebooks/
+│   └── tutorial_few_shot_learning.ipynb     # Main tutorial notebook
+├── src/few_shot_utils/
+│   ├── __init__.py                          # Package initialization
+│   ├── data.py                              # Data loading utilities
+│   ├── models.py                            # Model architectures
+│   ├── train.py                             # Training functions
+│   └── evaluate.py                          # Evaluation metrics
+└── docs/                                    # Documentation
+```
+
+## Dataset Description
+
+The dataset consists of:
+- **Satellite Images**: High-resolution RGB satellite images of Geneva, Switzerland
+- **Segmentation Labels**: Binary masks indicating rooftop locations
+- **Resolution**: Images at various resolutions suitable for few-shot learning
+
+## Development
+
+### Linting and Formatting
+
+This project uses [Ruff](https://docs.astral.sh/ruff/) for linting and formatting, including Jupyter notebooks.
+
+```bash
+# Run linting with automatic fixes
+ruff check . --fix
+ruff format .
+
+# Run pre-commit hooks
+pre-commit run --all-files
+```
+
+## References
+
+-
+-
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

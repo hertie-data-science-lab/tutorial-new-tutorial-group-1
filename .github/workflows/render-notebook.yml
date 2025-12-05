@@ -1,0 +1,57 @@
+name: Render Notebook to HTML
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'notebooks/tutorial_few_shot_learning.ipynb'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'notebooks/tutorial_few_shot_learning.ipynb'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install nbconvert jupyter
+
+      - name: Convert notebook to HTML
+        run: |
+          jupyter nbconvert \
+            --to html \
+            notebooks/tutorial_few_shot_learning.ipynb \
+            --output tutorial_few_shot_learning.html \
+            --output-dir docs/
+
+      # Only commit on push to main, NOT on PRs
+      - name: Commit rendered HTML
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/tutorial_few_shot_learning.html
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-render notebook to HTML [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi

@@ -1,0 +1,12 @@
+{
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "[jsonc]": {"editor.defaultFormatter": "vscode.json-language-features"},
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": false
+  },
+  "[jupyter]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  }
+}

@@ -1,0 +1,54 @@
+{
+"name": "Python 3",
+"build": {
+"dockerfile": "Dockerfile",
+"context": "..",
+"args": {
+"VARIANT": "3.11-bookworm"
+}
+},
+"customizations": {
+"vscode": {
+"settings": {
+"python.defaultInterpreterPath": "/workspaces/tutorial-group-1/.venv/bin/python",
+"python.terminal.activateEnvironment": true,
+"python.testing.pytestArgs": [
+"tests"
+],
+"python.testing.pytestEnabled": true,
+"python.testing.unittestEnabled": false,
+"python.testing.pytestPath": "/workspaces/tutorial-group-1/.venv/bin/pytest"
+},
+"extensions": [
+"bierner.markdown-mermaid",
+"charliermarsh.ruff",
+"EditorConfig.EditorConfig",
+"github.vscode-github-actions",
+"ms-toolsai.jupyter",
+"ms-toolsai.jupyter-keymap",
+"ms-toolsai.jupyter-renderers",
+"ms-python.python",
+"ms-python.vscode-pylance",
+"ms-toolsai.vscode-jupyter-cell-tags",
+"ms-toolsai.vscode-jupyter-slideshow",
+"ms-vsliveshare.vsliveshare",
+"ryanluker.vscode-coverage-gutters"
+]
+}
+},
+"forwardPorts": [
+8888
+],
+"portsAttributes": {
+"8888": {
+"label": "Jupyter Notebook"
+}
+},
+"updateContentCommand": "git config --global --add safe.directory /workspaces/tutorial-group-1; make create_venv; echo 'NOTE: PyTorch is NOT installed by default. To install PyTorch (CPU-only), run: source .venv/bin/activate && make install-torch'",
+"postCreateCommand": "echo 'source /workspaces/tutorial-group-1/.venv/bin/activate' >> ~/.bashrc; echo 'echo -e \"\\n⚠️  IMPORTANT: PyTorch is not installed by default due to size constraints.\"' >> ~/.bashrc; echo 'echo \"To install PyTorch (CPU-only ~730MB), run:\"' >> ~/.bashrc; echo 'echo \"  source .venv/bin/activate && make install-torch\"' >> ~/.bashrc",
+"remoteUser": "root",
+"features": {
+"git": "latest",
+"github-cli": "latest"
+}
+}

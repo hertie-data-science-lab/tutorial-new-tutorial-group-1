@@ -1,0 +1,52 @@
+# pre-commit: A framework for managing and maintaining multi-language pre-commit hooks
+# after configuration is complete, do these steps:
+    # pre-commit install
+    # pre-commit run --all-files
+# to skip pre-commmit-config when git-committing in terminal, add this: "--no-verify" option.
+
+ci:
+  autoupdate_commit_msg: "chore: update pre-commit hooks"
+  autofix_commit_msg: "style: pre-commit fixes"
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: mixed-line-ending
+      - id: name-tests-test
+        args: [--pytest-test-first]
+  # pygrep-hooks: a collection of fast, cheap, regex based pre-commit hooks
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+      - id: python-no-log-warn
+      - id: python-no-eval
+        exclude: ^src/few_shot_utils/(train|evaluate)\.py$
+      - id: rst-directive-colons
+      - id: rst-inline-touching-normal
+  # check-manifest: This makes sense only if you have MANIFEST.in (TODO:review)
+  - repo: https://github.com/mgedmin/check-manifest
+    rev: "0.47"
+    hooks:
+      - id: check-manifest
+        stages: [manual]
+  # pip audit to check for known pip vulnerabilities, supports pyproject.toml
+  - repo: https://github.com/pypa/pip-audit
+    rev: v2.7.1
+    hooks:
+      - id: pip-audit
+  #Ruff linter and formatter
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.2
+    hooks:
+      # Recommended to run linter first of automatic fixes are enabled (as some linting fixes might require reformatting)
+      - id: ruff
+        #Automatic linting fixes
+        types_or: [ python, pyi, jupyter ]
+        args: [ --fix ]
+      - id: ruff-format
+        types_or: [ python, pyi, jupyter ]
