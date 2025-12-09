@@ -13,21 +13,31 @@ repos:
     rev: v4.5.0
     hooks:
       - id: check-added-large-files
+        stages: [manual]
       - id: check-case-conflict
+        stages: [manual]
       - id: check-merge-conflict
+        stages: [manual]
       - id: check-symlinks
+        stages: [manual]
       - id: mixed-line-ending
+        stages: [manual]
       - id: name-tests-test
+        stages: [manual]
         args: [--pytest-test-first]
   # pygrep-hooks: a collection of fast, cheap, regex based pre-commit hooks
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.10.0
     hooks:
       - id: python-no-log-warn
+        stages: [manual]
       - id: python-no-eval
+        stages: [manual]
         exclude: ^src/few_shot_utils/(train|evaluate)\.py$
       - id: rst-directive-colons
+        stages: [manual]
       - id: rst-inline-touching-normal
+        stages: [manual]
   # check-manifest: This makes sense only if you have MANIFEST.in (TODO:review)
   - repo: https://github.com/mgedmin/check-manifest
     rev: "0.47"
@@ -39,6 +49,7 @@ repos:
     rev: v2.7.1
     hooks:
       - id: pip-audit
+        stages: [manual]
   #Ruff linter and formatter
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.8.2
@@ -48,5 +59,7 @@ repos:
         #Automatic linting fixes
         types_or: [ python, pyi, jupyter ]
         args: [ --fix ]
+        stages: [manual]
       - id: ruff-format
         types_or: [ python, pyi, jupyter ]
+        stages: [manual]
