@@ -59,7 +59,7 @@ repos:
         #Automatic linting fixes
         types_or: [ python, pyi, jupyter ]
         args: [ --fix ]
-        stages: [manual]
+        #stages: [manual]
       - id: ruff-format
         types_or: [ python, pyi, jupyter ]
-        stages: [manual]
+        #stages: [manual]

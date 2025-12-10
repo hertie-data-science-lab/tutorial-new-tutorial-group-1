@@ -154,3 +154,8 @@ cython_debug/
 data/
 
 .DS_Store
+
+# Exclude not needed notebooks files
+notebooks/exploration.ipynb
+notebooks/class_template.ipynb
+notebooks/few_shot_approaches_setup.ipynb

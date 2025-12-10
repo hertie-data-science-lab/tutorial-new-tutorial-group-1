@@ -1,0 +1,294 @@
+/*-- scss:defaults --*/
+
+// Professional color scheme with dark primary colors
+$theme-dark-red: #ba0020;
+$theme-dark-blue: #3b5998;
+$theme-medium-blue: #3b5998;
+$theme-dark-green: #2E5D31;
+$theme-dark-orange: #B8860B;
+$theme-dark-purple: #57068c;
+$theme-light-gray: #f8f9fa;
+$theme-medium-gray: #6c757d;
+$theme-dark-gray: #343a40;
+
+// Primary color scheme
+$primary-color: $theme-dark-red;
+$secondary-color: $theme-dark-blue;
+$accent-color: $theme-medium-blue;
+$emphasis-green: $theme-dark-green;
+$emphasis-orange: $theme-dark-orange;
+$emphasis-purple: $theme-dark-purple;
+$text-color: #2d3748;
+$background-color: #FFFFFF;
+
+// Typography - Optima and Palatino style fonts
+$font-family-sans-serif: "Optima", "Segoe UI", "Avenir Next", "Trebuchet MS", "Verdana", sans-serif;
+$font-family-serif: "Palatino", "Palatino Linotype", "TeX Gyre Pagella", "Book Antiqua", "Times New Roman", serif;
+$presentation-font-size-root: 28px;
+$presentation-h1-font-size: 1.9em;
+$presentation-h2-font-size: 1.6em;
+$presentation-h3-font-size: 1.3em;
+
+/*-- scss:rules --*/
+
+// Overall presentation styling
+.reveal {
+  font-family: $font-family-serif;
+  color: $text-color;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+// Title slide styling
+.reveal .title-slide {
+  text-align: center;
+  
+  h1.title {
+    font-family: $font-family-sans-serif;
+    color: $primary-color;
+    font-size: 3.0em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .subtitle {
+    font-family: $font-family-sans-serif;
+    color: $theme-dark-gray;
+    font-size: 1.7em;
+    font-weight: 300;
+    margin-top: 1em;
+  }
+}
+
+// Section headers (sans-serif)
+.reveal h1 {
+  font-family: $font-family-sans-serif;
+  color: $text-color;
+  font-size: $presentation-h1-font-size;
+  font-weight: 500;
+  margin-bottom: 0.6em;
+  border-bottom: 2px solid $secondary-color;
+  padding-bottom: 0.2em;
+}
+
+.reveal h2 {
+  font-family: $font-family-sans-serif;
+  color: $text-color;
+  font-size: $presentation-h2-font-size;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+.reveal h3 {
+  font-family: $font-family-sans-serif;
+  color: $text-color;
+  font-size: $presentation-h3-font-size;
+  font-weight: 500;
+  margin-bottom: 0.4em;
+}
+
+// List styling to match PowerPoint
+.reveal ul, .reveal ol {
+  margin-left: 1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  
+  li {
+    margin-bottom: 0em;
+    line-height: 1.2;
+  }
+  
+  ul, ol {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    font-size: 0.85em;
+  }
+}
+
+// Remove all paragraph spacing
+.reveal p {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.reveal ul {
+  list-style-type: none;
+  
+  li::before {
+    content: "›";
+    color: inherit;
+    font-weight: normal;
+    margin-right: 0.5em;
+    margin-left: -1em;
+    position: absolute;
+  }
+  
+  ul {
+    list-style-type: none;
+    
+    li::before {
+      content: "»";
+    }
+    
+    ul {
+      list-style-type: none;
+      
+      li::before {
+        content: "⋙";
+      }
+    }
+  }
+}
+
+// Table styling
+.reveal table {
+  border-collapse: collapse;
+  margin: 1em auto;
+  
+  th {
+    background-color: $secondary-color;
+    color: white;
+    font-weight: 500;
+    padding: 0.8em 1em;
+    border: 1px solid darken($secondary-color, 10%);
+  }
+  
+  td {
+    padding: 0.6em 1em;
+    border: 1px solid $theme-light-gray;
+  }
+  
+  tr:nth-child(even) {
+    background-color: $theme-light-gray;
+  }
+}
+
+// Code styling
+.reveal pre {
+  background-color: $theme-light-gray;
+  border: 1px solid $theme-medium-gray;
+  border-radius: 4px;
+  padding: 1em;
+  
+  code {
+    background-color: transparent;
+    color: $text-color;
+  }
+}
+
+.reveal code {
+  background-color: $theme-light-gray;
+  color: $theme-dark-blue;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.8em;
+}
+
+// Progress bar
+.reveal .progress {
+  color: $primary-color;
+}
+
+// Navigation controls
+.reveal .controls {
+  color: $primary-color;
+}
+
+// Slide numbers
+.reveal .slide-number {
+  color: $theme-dark-gray;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.3em 0.6em;
+  border-radius: 4px;
+  font-size: 0.7em;
+}
+
+// Special content styling
+.reveal .highlight-red {
+  color: $primary-color;
+  font-weight: 500;
+}
+
+.reveal .emph {
+  color: $primary-color;
+  font-weight: 600;
+}
+
+.reveal .highlight-blue {
+  color: $secondary-color;
+  font-weight: 500;
+}
+
+.reveal .highlight-purple {
+  color: $emphasis-purple;
+  font-weight: 500;
+}
+
+.reveal .highlight-green {
+  color: $emphasis-green;
+  font-weight: 500;
+}
+
+.reveal .highlight-orange {
+  color: $emphasis-orange;
+  font-weight: 500;
+}
+
+.reveal .highlight-dark-purple {
+  color: $emphasis-purple;
+  font-weight: 500;
+}
+
+// Custom classes for specific content
+.course-schedule {
+  list-style-type: decimal;
+  
+  li {
+    position: relative;
+    padding-left: 0;
+  }
+}
+
+// Grading table special styling
+.grading-structure {
+  .weight {
+    font-weight: bold;
+    color: $primary-color;
+  }
+}
+
+// Ensure good contrast for all text
+.reveal strong, .reveal b {
+  color: $primary-color;
+  font-weight: 600;
+}
+
+// Link styling
+.reveal a {
+  color: $accent-color;
+  text-decoration: underline;
+  
+  &:hover {
+    color: darken($accent-color, 15%);
+  }
+}
+
+// Footer styling for slide numbers and metadata
+.reveal .slide-footer {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  right: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.5em;
+  color: $theme-medium-gray;
+}
+
+.flushleft {
+   text-align: left;
+}

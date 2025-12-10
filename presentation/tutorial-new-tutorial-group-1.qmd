@@ -1,0 +1,155 @@
+---
+title: "Few-Shot Learning for Rooftop Detection in Satellite Imagery"
+subtitle: "Deep Learning Tutorial"
+author: "Giorgio Coppala, Nadine Daum, Elena Dreyer, Nico Reichardt"
+bibliography: refs.bib
+
+
+resources:
+  - img/**
+
+format:
+  revealjs:
+    theme: dimmery.scss
+    slide-number: true
+    default-image-width: 70%
+    preview-links: auto
+    logo: ""
+    footer: ""
+    transition: slide
+    background-transition: fade
+    self-contained: true
+    html-math-method:
+      method: mathjax
+      url: https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js
+    include-in-header: include.html
+    resources:
+      - img/**
+---
+
+
+## Tentative Structure (delete me)
+
+- problem setting (policy relevance)
+
+- dataset geneva
+
+- model & methods
+
+- prototypical Networks
+
+- main notebook in detail
+
+- results to expect 
+
+- wrap-up
+
+
+## Problem Setting
+
+- Tutorial Task: **Why rooftop segmentation matters** (solar planning, urban policy)
+
+- Cities need rooftop maps for solar PV planning
+
+- Manual labeling is expensive
+
+- Few-shot learning reduces annotation cost
+
+- Geneva dataset comes in (example for cities)
+
+## Dataset: [Geneva](https://huggingface.co/datasets/raphaelattias/overfitteam-geneva-satellite-images)
+
+- **Satellite Images**: High-resolution RGB satellite images of Geneva 
+
+- **Switzerland Segmentation Labels**: Binary masks indicating rooftop locations 
+
+- **Resolution**: Images at various resolutions suitable for few-shot learning
+
+
+- Train/test sizes (val?)
+
+- Example image + mask
+
+- Overlay visualization (the ones you already generated!)
+
+- Challenges: small rooftops, shadows, label noise, class imbalance 
+
+**Insert & dont forget**: visuals notebook data preprocessing etc
+
+## Model & Methods
+
+- Data Preprocessing
+
+- Model Architecture
+
+- Few-Shot in a Nutshell (modified figure from paper)
+
+- Few-Shot in implementation (ntoebook reference/ pseudocode for logic?)
+
+- Training strategy
+
+- Loss function
+
+- Evaluation metrics
+
+## Prototypical Networks
+
+**Insert modified figure here**
+
+- high-level schematic (support → prototype → similarity → segmentation)
+
+- literature reference: [SRPNet](https://arxiv.org/abs/2210.16829)
+
+
+## Main Notebook in Detail
+
+**how deep should we go?** 
+
+lets discuss that regarding time 
+
+(presentation should be 10 minutes, followed by 5 minutes of Q&A)
+
+
+## Expected Results
+
+- Show performance for 1-shot / 5-shot / full-data comparison
+
+- Show predicted masks
+
+Open to Discuss:
+
+- strengths
+
+- weaknesses
+
+- failure cases (shadows, tiny rooftops)
+
+
+## Wrap-Up: [GitHub Repo](https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1/tree/main)
+
+insert more from discussion + memo here
+
+**What we have so far**:
+
+- insert bullet point here
+
+- insert bullet point here
+
+
+**What we still need to finalize**:
+
+- insert bullet point here
+
+- insert bullet point here
+
+
+**Questions to discuss in class/ lynn**
+
+- insert bullet point here
+
+
+
+
+
+
+
