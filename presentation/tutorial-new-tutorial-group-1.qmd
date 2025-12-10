@@ -7,6 +7,7 @@ bibliography: refs.bib
 
 resources:
   - img/**
+  - figures/**
 
 format:
   revealjs:
@@ -40,7 +41,7 @@ format:
 
 - main notebook in detail
 
-- results to expect 
+- results to expect
 
 - wrap-up
 
@@ -59,11 +60,19 @@ format:
 
 ## Dataset: [Geneva](https://huggingface.co/datasets/raphaelattias/overfitteam-geneva-satellite-images)
 
-- **Satellite Images**: High-resolution RGB satellite images of Geneva 
+::: columns
+::: column
 
-- **Switzerland Segmentation Labels**: Binary masks indicating rooftop locations 
+- **Satellite Images**: High-resolution RGB satellite images of Geneva
+
+- **Switzerland Segmentation Labels**: Binary masks indicating rooftop locations
 
 - **Resolution**: Images at various resolutions suitable for few-shot learning
+
+::: column
+![](grids_animation.gif){width=100%}
+:::
+:::
 
 
 - Train/test sizes (val?)
@@ -72,7 +81,7 @@ format:
 
 - Overlay visualization (the ones you already generated!)
 
-- Challenges: small rooftops, shadows, label noise, class imbalance 
+- Challenges: small rooftops, shadows, label noise, class imbalance
 
 **Insert & dont forget**: visuals notebook data preprocessing etc
 
@@ -103,9 +112,9 @@ format:
 
 ## Main Notebook in Detail
 
-**how deep should we go?** 
+**how deep should we go?**
 
-lets discuss that regarding time 
+lets discuss that regarding time
 
 (presentation should be 10 minutes, followed by 5 minutes of Q&A)
 
