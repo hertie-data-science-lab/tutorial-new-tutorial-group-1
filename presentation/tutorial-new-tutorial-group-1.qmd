@@ -29,22 +29,6 @@ format:
 ---
 
 
-## Tentative Structure (delete me)
-
-- problem setting (policy relevance)
-
-- dataset geneva
-
-- model & methods
-
-- prototypical Networks
-
-- main notebook in detail
-
-- results to expect
-
-- wrap-up
-
 
 ## Problem Setting
 
@@ -68,7 +52,7 @@ format:
 :::
 
 
-## Dataset: [Geneva](https://huggingface.co/datasets/raphaelattias/overfitteam-geneva-satellite-images)
+## Dataset: [Rooftops of Geneva](https://huggingface.co/datasets/raphaelattias/overfitteam-geneva-satellite-images)
 
 ::: columns
 ::: column
@@ -88,65 +72,45 @@ format:
 :::
 :::
 
+## Few Shot Learning in General
 
-## Model & Methods
+tbd
 
-- Data Preprocessing
 
-- Model Architecture
 
-- Few-Shot in a Nutshell (modified figure from paper)
-
-- Few-Shot in implementation (ntoebook reference/ pseudocode for logic?)
-
-- Training strategy
-
-- Loss function
-
-- Evaluation metrics
-
-## Prototypical Networks
+## Prototypical Network
 
 ![](figures/illustration_prototypical_network.png){width=100%}
 
+(modified figure from paper) [SRPNet](https://arxiv.org/abs/2210.16829)
+
 - high-level schematic (support → prototype → similarity → segmentation)
 
-- literature reference: [SRPNet](https://arxiv.org/abs/2210.16829)
+- 1-way-1 shot --> explain what it means
+
+- Data Preprocessing (e.g. Augementation, Geographic Splits)
+
+- Model Architecture (feature Exctraction, CNN --> Number of Layers, Backbone)
+
+- Training strategy
+
+  - Loss function
+
+  - Evaluation metrics
 
 
-## Main Notebook in Detail
 
-**how deep should we go?**
-
-lets discuss that regarding time
-
-(presentation should be 10 minutes, followed by 5 minutes of Q&A)
-
-
-## Expected Results
+## (Preliminary) Results
 
 - Show performance for 1-shot / 5-shot / full-data comparison
 
 - Show predicted masks
 
-Open to Discuss:
-
-- strengths
-
-- weaknesses
-
-- failure cases (shadows, tiny rooftops)
 
 
-## Wrap-Up: [GitHub Repo](https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1/tree/main)
+## Wrap-Up/ Discussion
 
-insert more from discussion + memo here
-
-**What we have so far**:
-
-- insert bullet point here
-
-- insert bullet point here
+[GitHub Repo](https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1/tree/main)
 
 
 **What we still need to finalize**:
@@ -158,7 +122,11 @@ insert more from discussion + memo here
 
 **Questions to discuss in class/ lynn**
 
-- insert bullet point here
+- strengths
+
+- weaknesses
+
+- failure cases (shadows, tiny rooftops)
 
 
 
