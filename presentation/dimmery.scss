@@ -44,7 +44,11 @@ $presentation-h3-font-size: 1.3em;
 // Title slide styling
 .reveal .title-slide {
   text-align: center;
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 7f3b078 (Add presentation draft (see folder))
   h1.title {
     font-family: $font-family-sans-serif;
     color: $primary-color;
@@ -53,7 +57,11 @@ $presentation-h3-font-size: 1.3em;
     margin-bottom: 0.5em;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
   }
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 7f3b078 (Add presentation draft (see folder))
   .subtitle {
     font-family: $font-family-sans-serif;
     color: $theme-dark-gray;
@@ -95,12 +103,20 @@ $presentation-h3-font-size: 1.3em;
   margin-left: 1em;
   margin-top: 0em;
   margin-bottom: 0em;
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 7f3b078 (Add presentation draft (see folder))
   li {
     margin-bottom: 0em;
     line-height: 1.2;
   }
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 7f3b078 (Add presentation draft (see folder))
   ul, ol {
     margin-top: 0em;
     margin-bottom: 0em;
@@ -116,7 +132,11 @@ $presentation-h3-font-size: 1.3em;
 
 .reveal ul {
   list-style-type: none;
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 7f3b078 (Add presentation draft (see folder))
   li::before {
     content: "›";
     color: inherit;
@@ -125,6 +145,7 @@ $presentation-h3-font-size: 1.3em;
     margin-left: -1em;
     position: absolute;
   }
+<<<<<<< HEAD
 
   ul {
     list-style-type: none;
@@ -136,6 +157,19 @@ $presentation-h3-font-size: 1.3em;
     ul {
       list-style-type: none;
 
+=======
+
+  ul {
+    list-style-type: none;
+
+    li::before {
+      content: "»";
+    }
+
+    ul {
+      list-style-type: none;
+
+>>>>>>> 7f3b078 (Add presentation draft (see folder))
       li::before {
         content: "⋙";
       }
@@ -147,7 +181,11 @@ $presentation-h3-font-size: 1.3em;
 .reveal table {
   border-collapse: collapse;
   margin: 1em auto;
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 7f3b078 (Add presentation draft (see folder))
   th {
     background-color: $secondary-color;
     color: white;
@@ -155,12 +193,20 @@ $presentation-h3-font-size: 1.3em;
     padding: 0.8em 1em;
     border: 1px solid darken($secondary-color, 10%);
   }
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 7f3b078 (Add presentation draft (see folder))
   td {
     padding: 0.6em 1em;
     border: 1px solid $theme-light-gray;
   }
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 7f3b078 (Add presentation draft (see folder))
   tr:nth-child(even) {
     background-color: $theme-light-gray;
   }
@@ -172,7 +218,11 @@ $presentation-h3-font-size: 1.3em;
   border: 1px solid $theme-medium-gray;
   border-radius: 4px;
   padding: 1em;
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 7f3b078 (Add presentation draft (see folder))
   code {
     background-color: transparent;
     color: $text-color;
@@ -245,7 +295,11 @@ $presentation-h3-font-size: 1.3em;
 // Custom classes for specific content
 .course-schedule {
   list-style-type: decimal;
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 7f3b078 (Add presentation draft (see folder))
   li {
     position: relative;
     padding-left: 0;
@@ -270,7 +324,11 @@ $presentation-h3-font-size: 1.3em;
 .reveal a {
   color: $accent-color;
   text-decoration: underline;
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 7f3b078 (Add presentation draft (see folder))
   &:hover {
     color: darken($accent-color, 15%);
   }
@@ -365,4 +423,3 @@ $presentation-h3-font-size: 1.3em;
 .refs-super-small li {
   margin-bottom: 0.15em !important;
 }
-

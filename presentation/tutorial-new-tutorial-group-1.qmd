@@ -235,5 +235,3 @@ Here an example:
 
 - **Sung, F., Yang, Y., Zhang, L., Xiang, T., Torr, P. H., & Hospedales, T. M.** (2018). Learning to compare: Relation network for few-shot learning. In *CVPR* (pp. 1199–1208). https://doi.org/10.1109/CVPR.2018.00131
 :::
-
-
