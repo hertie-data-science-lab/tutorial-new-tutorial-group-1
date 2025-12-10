@@ -1,0 +1,99 @@
+---
+title: "Few-Shot Learning for Rooftop Detection in Satellite Imagery"
+subtitle: "Deep Learning Tutorial"
+author: "Giorgio Coppala, Nadine Daum, Elena Dreyer, Nico Reichardt"
+bibliography: refs.bib
+
+
+resources:
+  - img/**
+
+format:
+  revealjs:
+    theme: dimmery.scss
+    slide-number: true
+    default-image-width: 70%
+    preview-links: auto
+    logo: ""
+    footer: ""
+    transition: slide
+    background-transition: fade
+    self-contained: true
+    html-math-method:
+      method: mathjax
+      url: https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js
+    include-in-header: include.html
+    resources:
+      - img/**
+---
+
+
+## Policy Relevance
+
+- Many policy domains face **limited labeled data**  
+  (annotation is expensive, slow, or requires domain expertise)
+
+- **Applications:**  
+  - medical sector: **rare disease detection**  
+  - emergency management: **flood extent mapping**  
+  - climate & energy: **solar PV rooftop assessment**  
+  - urban planning: **building footprints & infrastructure mapping**
+
+- **Few-shot learning (FSL)** can help:  
+  - Learns to **generalize** from *1–5 labeled support examples per class*  
+  - Learns a **feature embedding** and constructs **class prototypes**  
+  - Enables segmentation in a **new city** with *minimal additional annotation*
+
+
+
+## Problem Setting
+
+::: {.columns}
+
+::: {.column width="55%"}
+
+- Tutorial Task: apply **Prototypical Networks** to **rooftop semantic segmentation** using only a few labeled tiles
+
+- Few-shot segmentation helps the model capture key rooftop patterns from just a few Geneva tiles and apply them across the city
+
+- Demonstrates how rooftop maps can be generated to support **solar potential analysis** in a new city
+
+:::
+
+::: {.column width="45%"}
+![](figures/geneva_outline.png){width="100%" style="margin-top: 1rem;"}
+
+<div style="font-size: 0.75rem; color:#666; text-align:center; margin-top:0.2rem;">
+Geneva outline with sample rooftop data (self-made visualization)
+</div>
+:::
+
+:::
+
+
+
+## Dataset: [Geneva](https://huggingface.co/datasets/raphaelattias/overfitteam-geneva-satellite-images)
+
+- **Size**: 1,050 labeled image-mask pairs
+
+- **Task**: Binary segmentation masks (rooftop vs background)
+
+- **Geographic splits**: 3 grids/ neighborhoods (North, Center, South)
+
+- **Image size**: 250x250 pixels
+
+- **Categories**: Industrial, Residential
+
+
+## Inside the dataset
+
+<div style="text-align:center;">
+![](figures/grids_animation.gif){width="50%"}
+</div>
+
+<div style="font-size:0.75rem; text-align:center; color:#666; margin-top:0.5rem;">
+Geneva Animation: raw image → rooftop mask → overlay
+</div>
+
+
+
