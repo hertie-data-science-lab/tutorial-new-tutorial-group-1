@@ -151,7 +151,9 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+data/
 
+.DS_Store
 # raw data
 data/images_roof_centered_geotiff/*.tif
 data/masks_superstructures_reviewed/*.png
