@@ -48,42 +48,46 @@ format:
 
 ## Problem Setting
 
-- Tutorial Task: **Why rooftop segmentation matters** (solar planning, urban policy)
+::: columns
+::: column
+- Cities need accurate rooftop maps to plan and scale **solar PV installations**
 
-- Cities need rooftop maps for solar PV planning
+- Manual rooftop labeling is **slow** and **costly**
 
-- Manual labeling is expensive
+- Every city looks different → traditional models do not **generalize** well
 
-- Few-shot learning reduces annotation cost
+### Idea:
 
-- Geneva dataset comes in (example for cities)
+- **Few-shot learning** makes segmentation possible with only a handful of labeled examples
+
+:::
+
+::: column
+![](figures/picture_use_case.png){width=90% style="margin-left: 30%;"}
+:::
+:::
+
 
 ## Dataset: [Geneva](https://huggingface.co/datasets/raphaelattias/overfitteam-geneva-satellite-images)
 
 ::: columns
 ::: column
 
-- **Satellite Images**: High-resolution RGB satellite images of Geneva
+- **Satellite Images**: High-resolution RGB satellite images of Geneva available on Huggingface
+- **Size**: 1,050 labeled image-mask pairs
+- **Task**: Binary segmentation masks (rooftop vs background)
+- **Geographic splits**: 3 grids/ neighborhoods (1301_11, 1301_13, 1301_31)
+- **Image size**: 250x250 pixels
+- **Categories**: Industrial, Residential
 
-- **Switzerland Segmentation Labels**: Binary masks indicating rooftop locations
 
-- **Resolution**: Images at various resolutions suitable for few-shot learning
+:::
 
 ::: column
-![](grids_animation.gif){width=100%}
+![](figures/grids_animation.gif){width=80% style="margin-left: 30%;"}
 :::
 :::
 
-
-- Train/test sizes (val?)
-
-- Example image + mask
-
-- Overlay visualization (the ones you already generated!)
-
-- Challenges: small rooftops, shadows, label noise, class imbalance
-
-**Insert & dont forget**: visuals notebook data preprocessing etc
 
 ## Model & Methods
 
@@ -103,7 +107,7 @@ format:
 
 ## Prototypical Networks
 
-**Insert modified figure here**
+![](figures/illustration_prototypical_network.png){width=100%}
 
 - high-level schematic (support → prototype → similarity → segmentation)
 
