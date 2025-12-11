@@ -1,0 +1,163 @@
+---
+title: "Few-Shot Learning for Rooftop Detection in Satellite Imagery"
+subtitle: "Deep Learning Tutorial"
+author: "Giorgio Coppala, Nadine Daum, Elena Dreyer, Nico Reichardt"
+bibliography: refs.bib
+
+
+resources:
+  - img/**
+
+format:
+  revealjs:
+    theme: dimmery.scss
+    slide-number: true
+    default-image-width: 70%
+    preview-links: auto
+    logo: ""
+    footer: ""
+    transition: slide
+    background-transition: fade
+    self-contained: true
+    html-math-method:
+      method: mathjax
+      url: https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js
+    include-in-header: include.html
+    resources:
+      - img/**
+---
+
+
+## Policy Relevance
+
+- Many public auhorities face the problem of **limited labeled data**
+  (annotation is expensive, slow, or requires domain expertise)
+
+- **Applications:**
+  - medical sector: **rare disease detection**
+  - emergency management: **flood extent mapping**
+  - climate & energy: **solar PV rooftop assessment**
+  - urban planning: **building footprints & infrastructure mapping**
+
+- **Few-shot learning (FSL)** can help:
+  - Learns to **generalize** from *1–5 labeled support examples per class*
+  - (in our case) learns a **feature embedding** and constructs **class prototypes**
+  - Enables segmentation in a **new city** with *minimal additional annotation*
+
+
+
+## Problem Setting
+
+::: {.columns}
+
+::: {.column width="55%"}
+
+- Goal of the tutorial: apply **Prototypical Networks** to
+rooftop segmentation using only a few labeled tiles
+
+- **Few-shot segmentation** allows the model to learn characteristic
+rooftop shapes and textures from a small Geneva subset
+
+- Demonstrates how rooftop maps can be produced for solar potential estimation in a **new geographic setting** with limited labels
+
+:::
+
+::: {.column width="45%"}
+![](figures/picture_use_case.png){width="100%" style="margin-top: 1rem;"}
+
+<div style="font-size: 0.75rem; color:#666; text-align:center; margin-top:0.2rem;">
+Demonstration use case (self-made visualization)
+</div>
+:::
+
+:::
+
+
+## Dataset: [Roofs of Geneva](https://huggingface.co/datasets/raphaelattias/overfitteam-geneva-satellite-images)
+
+- **Size**: 1,050 labeled image-mask pairs
+
+- **Task**: Binary segmentation masks (rooftop vs background)
+
+- **Geographic splits**: 3 grids/ neighborhoods (North, Center, South)
+
+- **Image size**: 250x250 pixels
+
+- **Categories**: Industrial, Residential
+
+
+## Inside the dataset
+
+<div style="text-align:center;">
+![](figures/grids_animation.gif){width="50%"}
+</div>
+
+<div style="font-size:0.75rem; text-align:center; color:#666; margin-top:0.5rem;">
+Geneva Animation: raw image → overlay rooftop → binary mask
+</div>
+
+
+## Discussion
+
+**Room for improvement:**
+
+- Fine-tune / tweak model parameters
+  - Add regularization
+  - Increase number of epochs
+
+- Implement rough approximation of solar potential
+  - e.g. based on IoU over roof area
+
+
+**Open for discussion:**
+
+- Try a different encoder ?
+  - e.g. ResNet-50
+
+- Change train / test split strategy ?
+  - e.g. random shuffle regardless of geographic regions
+
+
+
+<div style="text-align:center; margin-top:3.5em; font-size:1.1em;">
+  <a href="https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1/tree/main"
+     target="_blank"
+     style="text-decoration:none;">
+    GitHub Repo
+  </a>
+</div>
+
+
+
+## References
+
+::: {.refs-super-small}
+
+- **Alsentzer, E., Li, M. M., Kobren, S. N., Noori, A., Undiagnosed Diseases Network, Kohane, I. S., & Zitnik, M.** (2025). Few shot learning for phenotype-driven diagnosis of patients with rare genetic diseases. *npj Digital Medicine, 8*(1), 380. https://doi.org/10.1038/s41746-025-01749-1
+
+- **Castello, R., Walch, A., Attias, R., Cadei, R., Jiang, S., & Scartezzini, J.-L.** (2021). Quantification of the suitable rooftop area for solar panel installation from overhead imagery using convolutional neural networks. *Journal of Physics: Conference Series, 2042*(1), 012002. https://doi.org/10.1088/1742-6596/2042/1/012002
+
+- **Chen, Y., Wei, C., Wang, D., Ji, C., & Li, B.** (2022). Semi-supervised contrastive learning for few-shot segmentation of remote sensing images. *Remote Sensing, 14*(17), 4254. https://doi.org/10.3390/rs14174254
+
+- **Ding, H., Zhang, H., & Jiang, X.** (2022). Self-regularized prototypical network for few-shot semantic segmentation. *Pattern Recognition, 132*, 109018. https://doi.org/10.1016/j.patcog.2022.109018
+
+- **Finn, C., Abbeel, P., & Levine, S.** (2017). Model-agnostic meta-learning for fast adaptation of deep networks. In *International Conference on Machine Learning* (pp. 1126–1135). https://doi.org/10.48550/arXiv.1703.03400
+
+- **Ge, Z., Fan, X., Zhang, J., & Jin, S.** (2025). SegPPD-FS: Segmenting plant pests and diseases in the wild using few-shot learning. *Plant Phenomics*, 100121. https://doi.org/10.1016/j.plaphe.2025.100121
+
+- **Hu, Y., Liu, C., Li, Z., Xu, J., Han, Z., & Guo, J.** (2022). Few-shot building footprint shape classification with relation network. *ISPRS International Journal of Geo-Information, 11*(5), 311. https://doi.org/10.3390/ijgi11050311
+
+- **Jadon, S.** (2021). COVID-19 detection from scarce chest X-ray image data using few-shot deep learning. In *Medical Imaging 2021* (pp. 161–170). https://doi.org/10.1117/12.2581496
+
+- **Lee, G. Y., Dam, T., Ferdaus, M. M., Poenar, D. P., & Duong, V.** (2025). Enhancing Few-Shot Classification of Benchmark and Disaster Imagery with ATTBHFA-Net. *arXiv preprint* arXiv:2510.18326. https://doi.org/10.48550/arXiv.2510.18326
+
+- **Li, X., He, Z., Zhang, L., Guo, S., Hu, B., & Guo, K.** (2025). CDCNet: Cross-domain few-shot learning with adaptive representation enhancement. *Pattern Recognition, 162*, 111382. https://doi.org/10.1016/j.patcog.2025.111382
+
+- **Puthumanaillam, G., & Verma, U.** (2023). Texture based prototypical network for few-shot semantic segmentation of forest cover: Generalizing for different geographical regions. *Neurocomputing, 538*, 126201. https://doi.org/10.1016/j.neucom.2023.03.062
+
+- **Snell, J., Swersky, K., & Zemel, R.** (2017). Prototypical networks for few-shot learning. *Advances in Neural Information Processing Systems, 30*. https://doi.org/10.48550/arXiv.1703.05175
+
+- **Sung, F., Yang, Y., Zhang, L., Xiang, T., Torr, P. H., & Hospedales, T. M.** (2018). Learning to compare: Relation network for few-shot learning. In *CVPR* (pp. 1199–1208). https://doi.org/10.1109/CVPR.2018.00131
+:::
+
+

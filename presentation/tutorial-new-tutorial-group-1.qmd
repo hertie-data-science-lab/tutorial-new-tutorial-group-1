@@ -4,9 +4,9 @@ subtitle: "Deep Learning Tutorial"
 author: "Giorgio Coppola, Nadine Daum, Elena Dreyer, Nico Reichardt"
 bibliography: refs.bib
 
-
 resources:
   - img/**
+  - figures/**
 
 format:
   revealjs:
