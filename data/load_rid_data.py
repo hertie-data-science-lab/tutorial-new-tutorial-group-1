@@ -19,7 +19,7 @@ import subprocess
 from pathlib import Path
 
 SERVER = "rsync://m1655470@dataserv.ub.tum.de/m1655470"
-BASE_DIR = Path(__file__).resolve().parent     # data/
+BASE_DIR = Path(__file__).resolve().parent  # data/
 DATA_DIR = BASE_DIR
 
 FOLDERS = [
@@ -51,7 +51,7 @@ def rsync_folder(remote_name: str):
         "-av",
         "--progress",
         src,
-        str(dst) + "/",     # ensure trailing slash
+        str(dst) + "/",  # ensure trailing slash
     ]
 
     print(f">>> Downloading '{remote_name}' from server...")
