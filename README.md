@@ -85,7 +85,7 @@ Either have a quick walk through the tutorial notebook or watch the video tutori
 
 ### 📓 Tutorial Notebook
 
-**[View Tutorial Notebook (HTML)](docs/tutorial_few_shot_learning.html)**
+**[View Tutorial Notebook (HTML)](docs/tutorial.html)**
 
 
 ### 📹 Video Tutorial
