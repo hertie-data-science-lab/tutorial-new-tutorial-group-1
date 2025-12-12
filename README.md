@@ -1,98 +1,64 @@
-# Few-Shot Learning for Rooftop Detection in Satellite Imagery
+# Few-Shot Learning for Rooftop Segmentation in Satellite Imagery <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Hertie_School_of_Governance_logo.svg/1200px-Hertie_School_of_Governance_logo.svg.png" width="200px" align="right" />
+
 ### GRAD-E1394 Deep Learning
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/hertie-data-science-lab/tutorial-new-tutorial-group-1/blob/elena-setup/notebooks/tutorial_few_shot_learning.ipynb)
 
 
-**Author(s):** Elena Dreyer, Giorgio Coppola, Nadine Daum, Nicolas Reichardt
+**Author(s):**
+
+- Elena Dreyer [[Email](mailto:e.dreyer@students.hertie-school.org) | [GitHub](https://github.com/elenaivadreyer)]
+- Giorgio Coppola [[Email](mailto:G.Coppola@students.hertie-school.org) | [GitHub](https://github.com/giocopp)]
+- Nadine Daum [[Email](mailto:N.Daum@students.hertie-school.org) | [GitHub](https://github.com/NadineDaum)]
+- Nicolas Reichardt [[Email](mailto:N.Reichardt@students.hertie-school.org) | [GitHub](https://github.com/nicolasreichardt)]
+
 
 ## Tutorial Overview
 
-This tutorial demonstrates few-shot learning techniques for semantic segmentation of satellite imagery. The dataset contains high-resolution satellite images of Geneva, Switzerland, with corresponding segmentation labels for rooftop detection.
-
-📓 **[View Tutorial Notebook (HTML)](docs/tutorial_few_shot_learning.html)**
+This tutorial introduces few-shot learning techniques for semantic segmentation in satellite imagery using high-resolution images from Geneva, Switzerland. We will demonstrate how Prototypical Networks can learn meaningful rooftop representations from only a few labeled examples and generalize to new geographic areas with minimal annotation effort.
 
 ### Learning Outcomes
-- Understanding few-shot learning concepts for image segmentation
-- Working with satellite imagery and segmentation masks
-- Implementing and evaluating few-shot learning models for rooftop detection
 
-## Video Tutorial
+By the end of the tutorial, you will be able to:
+
+- Understand the core concepts behind **Few-Shot Learning** and **Few-Shot Semantic Segmentation**
+- Work with **satellite imagery**, geographic splits, and pixel-level segmentation masks
+- Implement **Prototypical Networks** with episodic training for segmentation tasks
+- Evaluate model performance using metrics such as **IoU** and interpret FSL model behavior
+- Reflect on **policy-relevant applications** such as rooftop solar assessment and data-scarce mapping tasks
+
+
+### Prerequisites
+
+- Intermediate Python programming
+- Familiarity with PyTorch
+- Basics of Machine and Deep Learning
+- Understanding of convolutional neural networks
+
+## Dataset Description
+
+🤗 [View on Hugging Face Hub](https://huggingface.co/datasets/raphaelattias/overfitteam-geneva-satellite-images) 🤗
+
+The dataset being used for the demonstration of this tutorial consists of:
+- **Satellite Images**: High-resolution RGB satellite images of Geneva, Switzerland
+- **Segmentation Labels**: Binary masks indicating rooftop locations
+
+## Quick Start
+
+Either have a quick walk through the tutorial notebook or watch the video tutorial below to get started!
+
+### 📓 Tutorial Notebook
+
+**[View Tutorial Notebook (HTML)](docs/tutorial_few_shot_learning.html)**
+
+
+### 📹 Video Tutorial
 
 <!-- VIDEO PLACEHOLDER: Replace the link below with your tutorial video -->
 [![Tutorial Video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 
 *Click the image above to watch the tutorial video*
 
-## Quick Start
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1.git
-cd tutorial-group-1
-
-# Create virtual environment
-python3 -m venv .venv
-source .venv/bin/activate
-
-# Install the package (without PyTorch)
-pip install -e .
-
-# Install PyTorch (CPU-only version recommended to save disk space)
-# CPU-only: ~730MB vs CUDA version: ~7GB
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-
-# Or use the Makefile
-make install
-make install-torch
-```
-
-**Note:** PyTorch is not installed by default due to its large size. The CPU-only version is recommended for most use cases and saves significant disk space.
-
-### Running the Tutorial
-
-Open the main tutorial notebook:
-```bash
-jupyter notebook notebooks/tutorial_few_shot_learning.ipynb
-```
-
-## Project Structure
-
-```
-├── notebooks/
-│   └── tutorial_few_shot_learning.ipynb     # Main tutorial notebook
-├── src/few_shot_utils/
-│   ├── __init__.py                          # Package initialization
-│   ├── data.py                              # Data loading utilities
-│   ├── models.py                            # Model architectures
-│   ├── train.py                             # Training functions
-│   └── evaluate.py                          # Evaluation metrics
-└── docs/                                    # Documentation
-```
-
-## Dataset Description
-
-The dataset consists of:
-- **Satellite Images**: High-resolution RGB satellite images of Geneva, Switzerland
-- **Segmentation Labels**: Binary masks indicating rooftop locations
-- **Resolution**: Images at various resolutions suitable for few-shot learning
-
-## Development
-
-### Linting and Formatting
-
-This project uses [Ruff](https://docs.astral.sh/ruff/) for linting and formatting, including Jupyter notebooks.
-
-```bash
-# Run linting with automatic fixes
-ruff check . --fix
-ruff format .
-
-# Run pre-commit hooks
-pre-commit run --all-files
-```
 
 ## References
 
@@ -119,8 +85,3 @@ pre-commit run --all-files
 - Puthumanaillam, G., & Verma, U. (2023). Texture based prototypical network for few-shot semantic segmentation of forest cover: Generalizing for different geographical regions. *Neurocomputing, 538*, 126201. [https://doi.org/10.1016/j.neucom.2023.03.062](https://doi.org/10.1016/j.neucom.2023.03.062)
 
 - Sung, F., Yang, Y., Zhang, L., Xiang, T., Torr, P. H., & Hospedales, T. M. (2018). Learning to compare: Relation network for few-shot learning. In *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition* (pp. 1199–1208). [https://doi.org/10.1109/CVPR.2018.00131](https://doi.org/10.1109/CVPR.2018.00131)
-
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
